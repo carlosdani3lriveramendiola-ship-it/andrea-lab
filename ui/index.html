@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ANDREA LAB</title>
+
+    <link rel="stylesheet" href="/estilo.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         BARRA LATERAL
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand-small">
+            <div class="brand-icon">🤖</div>
+            <div>
+                <strong>ANDREA</strong>
+                <span>Asistente de Voz</span>
+            </div>
+        </div>
+
+        <nav>
+
+            <button class="nav-item active" data-section="inicio">
+                🏠
+                <span>Inicio</span>
+            </button>
+
+            <button class="nav-item" data-section="pruebas">
+                ⏱️
+                <span>Pruebas</span>
+            </button>
+
+            <button class="nav-item" data-section="resultados">
+                📊
+                <span>Resultados</span>
+            </button>
+
+            <button class="nav-item" data-section="hardware">
+                🖥️
+                <span>Hardware</span>
+            </button>
+
+            <button class="nav-item" data-section="configuracion">
+                ⚙️
+                <span>Configuración</span>
+            </button>
+
+            <button class="nav-item" data-section="registros">
+                📋
+                <span>Registros</span>
+            </button>
+
+            <button class="nav-item" data-section="acerca">
+                ⓘ
+                <span>Acerca de</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <div class="andrea-logo">
+                🤖
+            </div>
+
+            <strong>ANDREA</strong>
+            <small>Asistente de Voz</small>
+
+            <div class="institution">
+                ININDETEC · VÍRGULA<br>
+                UVM
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div class="title-area">
+
+                <div class="robot-logo">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h1>
+                        ANDREA <span>LAB</span>
+                    </h1>
+
+                    <p>
+                        Benchmark & Performance
+                        <span>|</span>
+                        Voz
+                        <span>|</span>
+                        IA
+                        <span>|</span>
+                        Hardware
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="top-info">
+
+                <div class="datetime">
+                    <span id="current-date">
+                        17 de septiembre de 2026
+                    </span>
+
+                    <span id="current-time">
+                        15:14
+                    </span>
+                </div>
+
+                <div class="system-indicator">
+                    <span class="status-dot green"></span>
+                    Sistema local
+                </div>
+
+                <div class="user">
+
+                    <div class="user-circle">
+                        D
+                    </div>
+
+                    <span>Ing. Dani3l</span>
+
+                    <span>⌄</span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- FRASE -->
+
+        <div class="project-phrase">
+
+            <span>
+                "Tecnología que escucha, entiende y acompaña."
+            </span>
+
+            <small>
+                Proyecto Andrea
+            </small>
+
+        </div>
+
+
+        <!-- =====================================
+             ESTADO DEL HARDWARE
+        ====================================== -->
+
+        <section class="hardware-grid">
+
+
+            <!-- Raspberry -->
+
+            <div class="hardware-card">
+
+                <div class="hardware-icon raspberry">
+                    🫐
+                </div>
+
+                <div class="hardware-info">
+
+                    <h3>Raspberry Pi</h3>
+
+                    <div class="status offline">
+                        <span class="status-dot"></span>
+                        DESCONECTADA
+                    </div>
+
+                    <p>
+                        Modelo:
+                        <strong id="rasp-model">--</strong>
+                    </p>
+
+                    <p>
+                        IP:
+                        <strong id="rasp-ip">--</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ESP32 -->
+
+            <div class="hardware-card">
+
+                <div class="hardware-icon esp">
+                    ⚡
+                </div>
+
+                <div class="hardware-info">
+
+                    <h3>ESP32</h3>
+
+                    <div class="status offline">
+
+                        <span class="status-dot"></span>
+
+                        NO DETECTADO
+
+                    </div>
+
+                    <p>
+                        Puerto:
+                        <strong id="esp-port">--</strong>
+                    </p>
+
+                    <p>
+                        Baudrate:
+                        <strong id="esp-baud">--</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- XVF3800 -->
+
+            <div class="hardware-card">
+
+                <div class="hardware-icon xvf">
+                    🎙️
+                </div>
+
+                <div class="hardware-info">
+
+                    <h3>XVF3800</h3>
+
+                    <div class="status offline">
+
+                        <span class="status-dot"></span>
+
+                        NO DETECTADO
+
+                    </div>
+
+                    <p>
+                        Estado:
+                        <strong id="xvf-state">--</strong>
+                    </p>
+
+                    <p>
+                        AEC:
+                        <strong id="xvf-aec">--</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- USB -->
+
+            <div class="hardware-card">
+
+                <div class="hardware-icon usb">
+                    🔌
+                </div>
+
+                <div class="hardware-info">
+
+                    <h3>USB Audio</h3>
+
+                    <div class="status offline">
+
+                        <span class="status-dot"></span>
+
+                        NO DETECTADO
+
+                    </div>
+
+                    <p>
+                        Dispositivo:
+                        <strong id="usb-device">--</strong>
+                    </p>
+
+                    <p>
+                        Estado:
+                        <strong id="usb-state">--</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PRUEBAS
+        ====================================== -->
+
+        <section class="panel tests-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        ▶ Pruebas de desempeño
+                    </h2>
+
+                    <p>
+                        Ejecuta pruebas individuales o una prueba completa del sistema.
+                    </p>
+
+                </div>
+
+                <button
+                    id="btn-complete"
+                    class="complete-button">
+
+                    ▶ PRUEBA COMPLETA
+
+                </button>
+
+            </div>
+
+
+            <div class="test-buttons">
+
+                <button class="test-button stt" data-test="stt">
+                    🎙️
+                    <span>STT</span>
+                </button>
+
+                <button class="test-button llm" data-test="llm">
+                    🧠
+                    <span>LLM</span>
+                </button>
+
+                <button class="test-button tts" data-test="tts">
+                    🔊
+                    <span>TTS</span>
+                </button>
+
+                <button class="test-button realtime" data-test="realtime">
+                    ⚡
+                    <span>REALTIME</span>
+                </button>
+
+                <button class="test-button vad" data-test="vad">
+                    〽️
+                    <span>VAD</span>
+                </button>
+
+                <button class="test-button usb" data-test="usb">
+                    🔌
+                    <span>USB</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             RESULTADOS
+        ====================================== -->
+
+        <section class="results-layout">
+
+
+            <!-- RESULTADOS -->
+
+            <div class="panel results-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            📊 Resultados de la última prueba
+                        </h2>
+
+                        <p id="last-test">
+                            Sin pruebas ejecutadas
+                        </p>
+
+                    </div>
+
+                    <button class="history-button">
+                        🕘 Ver historial
+                    </button>
+
+                </div>
+
+
+                <div class="metrics-grid">
+
+
+                    <div class="metric-card">
+
+                        <span>🎙️ STT</span>
+
+                        <strong id="metric-stt">
+                            --
+                        </strong>
+
+                        <small>ms</small>
+
+                        <em id="trend-stt">
+                            —
+                        </em>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>🧠 LLM</span>
+
+                        <strong id="metric-llm">
+                            --
+                        </strong>
+
+                        <small>ms</small>
+
+                        <em id="trend-llm">
+                            —
+                        </em>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>🔊 TTS</span>
+
+                        <strong id="metric-tts">
+                            --
+                        </strong>
+
+                        <small>ms</small>
+
+                        <em id="trend-tts">
+                            —
+                        </em>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>⚙️ Conversión</span>
+
+                        <strong id="metric-conversion">
+                            --
+                        </strong>
+
+                        <small>ms</small>
+
+                        <em id="trend-conversion">
+                            —
+                        </em>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>🔌 USB</span>
+
+                        <strong id="metric-usb">
+                            --
+                        </strong>
+
+                        <small>ms</small>
+
+                        <em id="trend-usb">
+                            —
+                        </em>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>🎙️ Primera voz</span>
+
+                        <strong id="metric-first-audio">
+                            --
+                        </strong>
+
+                        <small>ms</small>
+
+                        <em id="trend-first-audio">
+                            —
+                        </em>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL -->
+
+                <div class="total-response">
+
+                    <div class="total-icon">
+                        ⏱️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Tiempo total de respuesta
+                        </span>
+
+                        <strong id="metric-total">
+                            -- ms
+                        </strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            id="progress-bar"
+                            class="progress-bar">
+                        </div>
+
+                    </div>
+
+                    <div class="completion-status">
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <strong>
+                            ESPERANDO
+                        </strong>
+
+                        <small>
+                            Sistema preparado
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GRÁFICA -->
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            📈 Gráfica de tiempos
+                        </h2>
+
+                        <p>
+                            Comparación de latencia
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="chart">
+
+                    <div class="chart-placeholder">
+
+                        <div class="bar b1">
+                            <span>--</span>
+                        </div>
+
+                        <div class="bar b2">
+                            <span>--</span>
+                        </div>
+
+                        <div class="bar b3">
+                            <span>--</span>
+                        </div>
+
+                        <div class="bar b4">
+                            <span>--</span>
+                        </div>
+
+                        <div class="bar b5">
+                            <span>--</span>
+                        </div>
+
+                        <div class="bar b6">
+                            <span>--</span>
+                        </div>
+
+                    </div>
+
+                    <div class="chart-labels">
+
+                        <span>STT</span>
+                        <span>LLM</span>
+                        <span>TTS</span>
+                        <span>CONV.</span>
+                        <span>USB</span>
+                        <span>VOZ</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PARTE INFERIOR
+        ====================================== -->
+
+        <section class="bottom-grid">
+
+
+            <!-- REGISTROS -->
+
+            <div class="panel logs-panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        📄 Registro del sistema
+                    </h2>
+
+                    <button
+                        id="clear-log"
+                        class="small-button">
+
+                        🗑 Limpiar
+
+                    </button>
+
+                </div>
+
+                <div
+                    id="system-log"
+                    class="system-log">
+
+                    <div>
+                        [--:--:--] Sistema iniciado.
+                    </div>
+
+                    <div>
+                        [--:--:--] Esperando pruebas...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HISTORIAL -->
+
+            <div class="panel history-panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        🕘 Últimas pruebas
+                    </h2>
+
+                    <button class="small-button">
+                        Ver todas →
+                    </button>
+
+                </div>
+
+                <div class="history-table">
+
+                    <div class="table-head">
+
+                        <span>Fecha</span>
+                        <span>Tipo</span>
+                        <span>Tiempo</span>
+                        <span>Estado</span>
+
+                    </div>
+
+                    <div
+                        id="history-body"
+                        class="table-body">
+
+                        <div class="empty-history">
+                            No hay pruebas registradas
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="panel info-panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        ⓘ Información del sistema
+                    </h2>
+
+                </div>
+
+                <div class="system-info">
+
+                    <div>
+                        <span>SO</span>
+                        <strong id="system-os">
+                            Ubuntu
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Python</span>
+                        <strong id="system-python">
+                            --
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Flask</span>
+                        <strong id="system-flask">
+                            --
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Proyecto</span>
+                        <strong>
+                            Andrea Lab
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Versión</span>
+                        <strong>
+                            v0.1.0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Ruta</span>
+                        <strong>
+                            ~/andrea-lab
+                        </strong>
+                    </div>
+
+                    <div class="operating">
+
+                        <span>Estado</span>
+
+                        <strong>
+
+                            <span class="status-dot green"></span>
+
+                            Operativo
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="andrea-watermark">
+
+                    🤖
+
+                    <strong>ANDREA</strong>
+
+                    <small>
+                        Voz · IA · Innovación
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <footer>
+
+            <span>
+                ININDETEC · Vírgula
+            </span>
+
+            <span>UVM</span>
+
+            <span>Proyecto Andrea</span>
+
+            <span class="footer-right">
+                Desarrollado por Ing. Dani3l
+                <span>|</span>
+                2026
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="/app.js"></script>
+
+</body>
+</html>
